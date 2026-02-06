@@ -1,0 +1,698 @@
+//1.Basic Arithmetic Operations
+#include <stdio.h>
+int main() {
+ int a,b;
+    scanf("%d%d",&a,&b);
+    printf("Sum: %d",a+b);
+    printf("\nDifference: %d",a-b);
+    printf("\nProduct: %d",a*b);
+    printf("\nQuotient: %d",a/b);
+    printf("\nRemainder: %d",a%b);
+    return 0;
+}
+//2.Smart Shopper
+#include <stdio.h>
+int main() 
+{
+    int cost1,qua1,cost2,qua2,cost3,qua3,bud;
+    scanf("%d%d%d%d%d%d%d",&cost1,&qua1,&cost2,&qua2,&cost3,&qua3,&bud);
+    int a,b,c;
+    float d;
+    a=cost1*qua1;
+    b=cost2*qua2;
+    c=cost3*qua3;
+    d=a+b+c;
+    int tax;
+    tax=d*0.10;
+    float tottax=tax+d;
+    if(bud>=tottax)
+    {
+        printf("Total (Before Tax): %.2f\n",d);
+        printf("Total (After Tax): %.2f\n",tottax);
+        printf("Within Budget\n");     
+    }
+    else
+    {
+        printf("Total (Before Tax): %.2f\n",d);
+        printf("Total (After Tax): %.2f\n",tottax);
+        printf("Over Budget");
+    }
+    return 0;
+}
+//3.MINIMUM CUTS TO DIVIDE A CIRCLE 2
+  int numberOfCuts(int n) {
+    if(n == 1){
+        return 0;
+    }
+    if(n%2==0)
+    {
+        n=n/2;
+        return n;
+    }
+    else
+    {
+        return n;
+    }
+
+}
+//4.DIVISOR GAME 2
+  bool divisorGame(int n) {
+ if(n%2==0)
+ {
+    return true;
+ }   
+ else{
+    return false;
+ }
+}
+//5.Greatest of Three Numbers 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    if(a>b && a>c)
+    {
+        printf("%d is the greatest",a);
+    }
+    else if(b>c && b>a)
+    { 
+        printf("%d is the greatest",b);
+        
+    }
+    else if (c>a && c>b)
+    {
+        printf("%d is the greatest",c);
+    }
+    else 
+    {
+        printf("There is a tie for the greatest number");
+    }
+    return 0;
+} 
+
+//6.Character Classifier
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+   char a;
+   scanf("%c",&a);
+    if(a>=65 && a<=90)
+    {
+        printf("Uppercase Alphabet");
+    }
+    else if(a>=97 && a<=122)
+    {
+        printf("Lowercase Alphabet");
+    }
+    else if(a>=48 && a<=58)
+    {
+        printf("Digit");
+    }
+    else
+    {
+        printf("Special Character");
+    }
+    
+    
+}
+
+//7.Triangle Type Detector
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main()
+{
+    int a,b,c;
+    scanf("%d%d%d",&a,&b,&c);
+    if(a + b > c && b + c > a && c + a > b)
+    {
+        if((a==b) && (b==c) && (c==a))
+        {
+            printf("Equilateral Triangle");
+        }
+        else if(a==b || b==c || c==a)
+        {
+            printf("Isosceles Triangle");
+        }
+        else if((a!=b) && (b!=c) && (c!=a))
+        {
+            printf("Scalene Triangle");
+        }
+       
+    }
+    else
+    {
+        printf("Not a valid triangle");
+    }
+}
+//8.Leap Year Checker 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() 
+{
+    int year;
+    scanf("%d",&year);
+    if(year%400==0||(year%4==0&&year%100!=0)){
+       printf("Leap Year");
+    } else{
+           printf("Not a Leap Year");
+       }
+   
+    return 0;
+}
+//9.Print All Factors
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            printf("%d\t",i);
+        }
+}
+    return 0;
+}
+//10.Is It a Prime Number?
+  #include <stdio.h>
+int main() 
+{
+    int n;
+     scanf("%d",&n);
+    if(n<=1)
+    {
+        printf("Not Prime");
+        
+        return 0;
+        
+    }
+    for(int i=2;i*i<=n;i++){
+        if(n%i==0){
+            printf("Not Prime");
+            return 0;
+        }
+    }
+    printf("Prime");
+    return 0;
+    
+    }
+//11.Manual Power Calculator
+#include <stdio.h>
+int main() 
+{
+    int a,b,c=1,i; 
+    scanf("%d%d",&a,&b);
+    for(i=1;i<=b;i++)
+    {
+        c=c*a;
+    }
+    printf("%d",c);
+    return 0;
+}
+//12.Fibonacci Number
+int fib(int n){
+    int a=0;
+    int b=1;
+    int c;
+    if(n==0 || n==1)
+    {
+        return n;
+    }
+    for(int i=2;i<=n;i++)
+    {
+    c=a+b;
+    a=b;
+    b=c;
+
+}
+return c;
+}
+//13.Tribonacci Number 
+int tribonacci(int n){
+    int a = 0;
+    int b = 1;
+    int c = 1;
+    int d;
+
+    if(n == 0)
+        return 0;
+    if(n == 1 || n == 2)
+        return 1;
+
+    for(int i = 3; i <= n; i++)
+    {
+        d = a + b + c;
+        a = b;
+        b = c;
+        c = d;
+    }
+    return c;
+}
+//14.NO OF COMMON FACTORS
+int commonFactors(int a, int b)
+{
+    int min=0;
+    int count=0;
+    if(a>b)
+    {
+       min=b;
+    }
+    else
+    {
+        min=a;
+    }
+    for(int i=1;i<=min;i++)
+    {
+        if(a%i==0 && b%i==0)
+        {
+            count++;
+        }
+    }
+   return count;
+}
+//15.THREE DIVISORS
+bool isThree(int n) {
+    int root = sqrt(n);
+
+    // Check if n is a perfect square
+    if (root * root != n)
+        return false;
+
+    // Check if root is prime
+    if (root < 2)
+        return false;
+
+    for (int i = 2; i * i <= root; i++) {
+        if (root % i == 0)
+            return false;
+    }
+
+    return true;
+}
+//16.COUNT ME
+int countDigits(int n) {
+    int count = 0;
+
+    while (n != 0) {
+        n = n / 10;
+        count++;
+    }
+
+    return count;
+}
+//17.Maximum and Minimum Digit
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n;
+    scanf("%d",&n);
+    if(n<0)
+    {
+        n=-n;
+    }
+    if(n==0)
+    {
+        printf("0 0");
+        return 0;
+    }
+    int count=0;
+    int tem=n;
+    int te=n;
+    int d;
+    
+    while(tem!=0)
+    {
+         tem=tem/10;
+        count++;
+        
+    }
+    
+    int arr[count];
+    for(int i=0;i<count;i++)
+    {
+        int t=te;
+        d=te%10;
+        arr[i]=d;
+        te=t/10;
+    }
+    int min=arr[0],max=arr[0];
+    for(int i=1;i<count;i++)
+    {
+        if(arr[i]<min)
+        {
+            min=arr[i];
+        }
+        if(arr[i]>max)
+        {
+            max=arr[i];
+        }
+    }
+    printf("%d %d",max,min);
+    return 0;
+}
+//18.Reverse the number 
+#include <stdio.h>
+
+int main() {
+	int num,rev=0,last;
+	scanf("%d",&num);
+	while(num!=0){
+	    last=num%10;
+	    rev=rev*10+last;
+	    num=num/10;
+	}
+	printf("%d",rev);
+	return 0;
+}
+//19.Palindrome Number
+bool isPalindrome(long n) {
+    if(n<0)
+    {
+        return false;
+    }
+    long tem=n;
+    long d=0;
+
+    while(tem!=0)
+    {
+        long t=tem;
+        tem=tem%10;
+        d=d*10+tem;
+        tem=t/10;
+    }
+    if(n==d)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+
+}
+//20.Is it an Armstrong Number
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+        int num,n;
+    scanf("%d%n",&num,&n);
+    int temp=num;
+    int sum=0;
+    while(num>0){
+    int r=num%10;
+    int mul=1;
+    for(int i=1;i<=n;i++){
+        mul=mul*r;
+    }
+        sum=sum+mul;
+        num=num/10;
+        
+    }
+    if(sum==temp){
+    printf("true");
+    }
+    else{
+        printf("false");
+}
+
+    return 0;
+}
+//21.Strong Number 
+#include <stdio.h>
+
+int main(){
+	int num;
+	scanf("%d", &num);
+	int arr[num];
+	for(int i=0;i<num;i++)
+	{
+		scanf("%d",&arr[i]);
+	} 
+	int storearr[num];  
+	for(int i=0;i<num;i++)
+	{
+		
+		int arr1=arr[i];
+		int count=0;
+		while(arr1!=0)
+		{
+            arr1=arr1/10;
+			count++;
+
+		}
+		
+		int t=arr[i];
+		int finall=0;
+		for(int j=0;j<count;j++)
+		{
+            int tem=t;
+			
+			t=t%10;
+			int fact=1;
+			for(int x=1;x<=t;x++)
+			{
+                fact=fact*x;
+			}
+			finall=finall+fact;
+			
+			t=tem/10;
+
+		}
+		storearr[i]=finall;
+	} 
+	for(int i=0;i<num;i++)
+	{
+		if(arr[i]==storearr[i])
+		{
+			printf("YES");
+		}
+		else
+		{
+			printf("NO");
+		}
+		printf("\n");
+	} 
+	return 0;    	             
+}
+//22.Water Bottles
+int numWaterBottles(int numBottles, int numExchange)
+ {
+    {
+        int total=numBottles;
+        int empty=numBottles;
+    while(empty>=numExchange)
+    {
+        int newBottle=empty/numExchange;
+        total=total+newBottle;
+        empty=newBottle+(empty%numExchange);
+    }
+    return total;
+    }
+ }  
+//23.Happy Number
+class Solution {
+public:
+    int sumSquare(int n)
+    {
+        int sum = 0;
+        while (n != 0)
+        {
+            int digit = n % 10;
+            sum += digit * digit;
+            n = n / 10;
+        }
+        return sum;
+    }
+
+    bool isHappy(int n) {
+        int temp = n;
+
+        while (temp != 1 && temp != 4)
+        {
+            temp = sumSquare(temp);
+        }
+
+        return temp == 1;
+    }
+};
+//24.Rectangle Pattern
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+       int a,b;
+        scanf("%d %d",&a,&b);
+        for(int i=1;i<=a;i++)
+        {
+            for(int j=1;j<=b;j++)
+            {
+                
+            
+                printf("*");
+                
+                }
+            printf("\n");
+        }
+    return 0;
+}
+//25.Staircase of Stars
+#include <stdio.h>
+
+int main() {
+    int n,row,col;
+    scanf("%d",&n);
+    for(row=1;row<=n;row++){
+        for( col=1;col<=row;col++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+//26.Descending Star Steps
+#include <stdio.h>
+
+int main() {
+    int n,row,col;
+    scanf("%d",&n);
+    for(row=n;row>0;row--){
+        for( col=1;col<=row;col++){
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+//27.Binary Pattern 
+#include <stdio.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int start = 1;
+
+    for (int i = 0; i < n; i++) {
+        int length = n - i;
+        int current = start;
+
+        for (int j = 0; j < length; j++) {
+            printf("%d", current);
+            current = 1 - current;  
+        }
+
+        printf("\n");
+        start = 1 - start;         
+    }
+
+    return 0;
+}
+//28.Asterisk Pattern: X with Horizontal and Vertical Cut
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int n,i,j;
+    scanf("%d",&n);
+    int mid=(n/2)+1;
+    for(i=1;i<=n;i++){
+        for(j=1;j<=n;j++){
+            if((i==j)||(i+j)==(n+1)){
+                printf("* ");
+            }
+            else if(i==mid||j==mid)
+                printf("* ");
+            else 
+                printf("  ");
+        }
+        printf("\n");
+        
+    }
+    return 0;
+}
+//29.Hollow Diamond Pattern
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    scanf("%d", &n);
+
+    int mid = n - 1;
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < mid - i; j++)
+            printf(" ");
+        printf("*");
+
+        if (i > 0) {
+            for (j = 0; j < 2 * i - 1; j++)
+                printf(" ");
+            printf("*");
+        }
+        printf("\n");
+    }
+    for (i = n - 2; i >= 0; i--) {
+        for (j = 0; j < mid - i; j++)
+            printf(" ");
+
+        printf("*");
+
+        if (i > 0) {
+            for (j = 0; j < 2 * i - 1; j++)
+                printf(" ");
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+//30.Filled Alphabet Pyramid Pattern
+#include <stdio.h>
+
+int main() {
+    int n, i, j;
+    scanf("%d", &n);
+
+    for (i = 1; i <= n; i++) {
+        for (j = 1; j <= n - i; j++) {
+            printf("  ");
+        }
+        for (j = 0; j < 2 * i - 1; j++) {
+            printf("%c ", 'A' + j);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
